@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Телефон{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Телефон</h1>
+        </div>
+        <div class="content">
+            <table>
+                <tr>
+                    <td><b>Наименование:</b> {{phone.name}}</td>
+                </tr>
+                <tr>
+                    <td><b>Цена:</b> {{phone.price}}</td>
+                </tr>
+                <tr>
+                    <td><b>Дата релиза:</b> {{phone.release_date}}</td>
+                </tr>
+                <tr>
+                    <td><b>LTE:</b>
+                        {% if phone.lte_exists%}
+                            да
+                        {% else%}
+                            нет
+                        {% endif%}
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src={{phone.image}}></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
